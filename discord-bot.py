@@ -29,9 +29,6 @@ firebase_admin.initialize_app(cred, {
 # Firestore 데이터베이스 초기화
 db = firestore.client()
 
-# 봇 토큰
-token = 'MTExMTU2NjAyNjc1NzM5NDQ3Mw.GRbCdu.O0G1N9Mo5c4GPwdpNCpcJnGB5V3VB_TdzN8Lj0'  
-
 # 인텐트 설정
 intents = discord.Intents.all()
 intents.messages = True
@@ -1920,5 +1917,5 @@ async def buy_material(ctx, item_name, quantity: int):
 
 
 
-# 봇 실행
-bot.run(token)
+access_token = os.environ["BOT_TOKEN"]
+bot.run(access_token)
